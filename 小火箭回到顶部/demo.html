@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            height: 3000px;
+            background-image: linear-gradient(deepskyblue, deeppink, #f33, #333);
+        }
+        
+        .go-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="go-top">
+        <img src="./top.jpg" alt="">
+    </div>
+    <script>
+        let goTop = document.querySelector('.go-top');
+        let leader = 0;
+        let target = 0;
+        let timer = null;
+
+        window.onscroll = function() {
+            if (document.body.scrollTop >= 1000) {
+                goTop.style.display = 'block';
+                target = document.body.scrollTop;
+            } else {
+                goTop.style.display = 'none';
+            }
+        }
+
+        goTop.addEventListener('click', function() {
+            clearInterval(timer);
+            console.log(target);
+            timer = setInterval(function() {
+                target -= 100;
+                console.log(target);
+                document.body.scrollTop = target;
+
+                if (target <= 0) {
+                    clearInterval(timer);
+                    return;
+                }
+            }, 10);
+        });
+    </script>
+</body>
+
+</html>

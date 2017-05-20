@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        body {
+            background-color: #333;
+        }
+        
+        .list {
+            margin: 30px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            display: flex;
+            width: 640px;
+            position: relative;
+        }
+        
+        .list li {
+            height: 30px;
+            width: 90px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+            z-index: 10;
+        }
+        
+        .cloud {
+            background-color: deepskyblue;
+            width: 80px;
+            height: 5px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <ul class="list">
+        <span class="cloud"></span>
+        <li>首页新闻</li>
+        <li>师资力量</li>
+        <li>活动策划</li>
+        <li>企业文化</li>
+        <li>招聘信息</li>
+        <li>公司简介</li>
+        <li>上海校区</li>
+        <li>广州校区</li>
+    </ul>
+    <script>
+        let cloud = document.querySelector('.cloud');
+        let lis = document.querySelectorAll('li');
+        let leader = 0;
+        let target = 0;
+        let timer = null;
+        let current = 0;
+
+        Array.from(lis).forEach(function(li) {
+            li.onmouseover = function() {
+                target = this.offsetLeft;
+            }
+
+            li.onmouseout = function() {
+                target = current;
+            }
+
+            li.onclick = function() {
+                current = this.offsetLeft;
+            }
+        });
+
+        clearInterval(timer);
+        timer = setInterval(function() {
+            leader = leader + (target - leader) / 10;
+            cloud.style.left = leader + 'px';
+        }, 10);
+    </script>
+</body>
+
+</html>

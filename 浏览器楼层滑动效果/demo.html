@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .floor {
+            width: 100%;
+            height: 100%;
+        }
+        
+        .floor li:nth-child(1) {
+            width: 100%;
+            height: 100%;
+            background-color: deepskyblue;
+        }
+        
+        .floor li:nth-child(2) {
+            width: 100%;
+            height: 100%;
+            background-color: deeppink;
+        }
+        
+        .floor li:nth-child(3) {
+            width: 100%;
+            height: 100%;
+            background-color: darkslateblue;
+        }
+        
+        .floor li:nth-child(4) {
+            width: 100%;
+            height: 100%;
+            background-color: darkorange;
+        }
+        
+        .floor li:nth-child(5) {
+            width: 100%;
+            height: 100%;
+            background-color: rosybrown;
+        }
+        
+        .choose {
+            position: fixed;
+            left: 20px;
+            top: 20px;
+        }
+        
+        .choose div {
+            width: 50px;
+            height: 50px;
+            margin: 0;
+            border: 1px solid #000;
+            text-align: center;
+            line-height: 50px;
+            color: #fff;
+            cursor: pointer;
+            background-color: #f33;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="choose">
+        <div>1F</div>
+        <div>2F</div>
+        <div>3F</div>
+        <div>4F</div>
+        <div>5F</div>
+    </div>
+    <ul class="floor">
+        <li class="one"></li>
+        <li class="two"></li>
+        <li class="three"></li>
+        <li class="four"></li>
+        <li class="five"></li>
+    </ul>
+
+    <script>
+        let one = document.querySelector('.one');
+        let two = document.querySelector('.two');
+        let three = document.querySelector('.three');
+        let four = document.querySelector('.four');
+        let five = document.querySelector('.five');
+
+        let leader = 0;
+        let target = 0;
+        let timer = null;
+
+        let floors = document.querySelectorAll('.choose div');
+        floors[0].addEventListener('click', function() {
+            let oneTop = one.offsetTop;
+            target = oneTop;
+        });
+        floors[1].addEventListener('click', function() {
+            let twoTop = two.offsetTop;
+            target = twoTop;
+        });
+        floors[2].addEventListener('click', function() {
+            let threeTop = three.offsetTop;
+            target = threeTop;
+        });
+        floors[3].addEventListener('click', function() {
+            let fourTop = four.offsetTop;
+            target = fourTop;
+        });
+        floors[4].addEventListener('click', function() {
+
+            let fiveTop = five.offsetTop;
+            target = fiveTop;
+        });
+
+        clearInterval(timer);
+        timer = setInterval(function() {
+            leader = leader + (target - leader) / 10;
+            document.body.scrollTop = leader;
+        }, 10);
+    </script>
+</body>
+
+</html>

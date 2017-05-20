@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        img {
+            width: 100px;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./shenle.jpg" alt="">
+    <script>
+        let leaderX = 0;
+        let leaderY = 0;
+        let targetX = 0;
+        let targetY = 0;
+        let image = document.querySelector('img');
+        let timer = null;
+
+        document.onclick = function(event) {
+            event = window.event;
+            targetX = event.clientX - image.offsetWidth / 2;
+            targetY = event.clientY - image.offsetHeight / 2;
+        }
+
+        clearInterval(timer);
+        timer = setInterval(function() {
+            leaderX = leaderX + (targetX - leaderX) / 10;
+            leaderY = leaderY + (targetY - leaderY) / 10;
+            image.style.left = leaderX + 'px';
+            image.style.top = leaderY + 'px';
+        }, 10);
+    </script>
+</body>
+
+</html>
