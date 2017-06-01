@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #load-news {
+            text-decoration: none;
+            border: 1px solid blueviolet;
+            display: block;
+            border-radius: 5px;
+            text-align: center;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            margin: 10px auto;
+            cursor: pointer;
+            background-color: deepskyblue;
+            /*box-shadow: 3px 3px 3px #ccc;*/
+            color: #fff;
+            transition: all .3s;
+        }
+        
+        #load-news:hover {
+            box-shadow: 3px 3px 3px #ccc;
+            background-color: #ff3300;
+        }
+        
+        ul,
+        li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        #news-list {
+            margin: 0 auto;
+        }
+        
+        #news-list li {
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            margin: 10px;
+            padding: 8px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <ul id="news-list">
+        <!--<li>111</li>
+        <li>111</li>-->
+    </ul>
+    <a href="#" id="load-news">加载新闻</a>
+
+    <script>
+        let load = document.querySelector('#load-news');
+        let list = document.querySelector('#news-list');
+        let index = 0;
+        let isLoading = false;
+
+        load.addEventListener('click', function(e) {
+            e.preventDefault();
+            load.innerHTML = 'Loading...';
+            getData();
+        });
+
+        function getData() {
+            // if (isLoading) {
+            //     return;
+            // }
+
+            let xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if ((xhr.status >= 200 && xhr.status < 300) || xhr.status === 304) {
+                        let data = JSON.parse(xhr.responseText);
+                        renderData(data);
+                        load.innerHTML = '加载更多';
+                    } else {
+                        alert('404');
+                    }
+                }
+            }
+            xhr.open('get', `/news?index=${index}&length=5`);
+            xhr.send(null);
+            index += 5;
+        }
+
+        function renderData(data) {
+            let fragment = document.createDocumentFragment();
+            data.forEach(function(item) {
+                let li = document.createElement('li');
+                li.innerHTML = item;
+                fragment.appendChild(li);
+            });
+            list.appendChild(fragment);
+        }
+    </script>
+</body>
+
+</html>
