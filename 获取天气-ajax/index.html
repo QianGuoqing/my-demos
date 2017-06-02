@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <button type="" id="get-weather">获取天气</button>
+    <script>
+        let getWeather = document.querySelector('#get-weather');
+
+        getWeather.addEventListener('click', function() {
+            let xhr = new XMLHttpRequest();
+            xhr.open('get', 'http://api.jirengu.com/weather.php');
+            xhr.send(null);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 304 || (xhr.status >= 200 && xhr.status < 300)) {
+                        let weatherData = JSON.parse(xhr.responseText);
+                        console.log(weatherData);
+                        let today = weatherData.date;
+                        let results = weatherData.results;
+                        let currentCity = results[0].currentCity;
+                        let weather_data = results[0].weather_data;
+                        let pm25 = results[0].pm25;
+                        console.log(today, currentCity, pm25, weather_data[0].weather, weather_data[0].wind);
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
