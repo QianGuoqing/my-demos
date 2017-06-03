@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/less.min.js"></script>
+    <script>
+        let pixelRatio = 1 / window.devicePixelRatio;
+        document.write(`<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=${pixelRatio}, minimum-scale=${pixelRatio},maximum-scale=${pixelRatio}">`);
+
+        // 条件：尺寸越大，则字体大小越大，反之，尺寸越小，字体大小越小。
+        // 获取HTML节点
+        let html = document.querySelector('html');
+        // 获取屏幕宽度
+        let pageWidth = html.getBoundingClientRect().width;
+        // 或者
+        // let pageWidth = parseFloat(window.getComputedStyle(html, null).width);
+        // 屏幕宽度 / 固定数值 = 基准值
+        html.style.fontSize = pageWidth / 16 + 'px';
+    </script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="search"></div>
+    </header>
+    <main class="main">
+        <div class="banner">
+            <img src="./image/slide.jpg" alt="">
+        </div>
+        <div class="shopping-type">
+            <ul class="shopping-list clearfix">
+                <li>
+                    <a href="#" class="shopping-item">
+                    </a>
+                    <h2 class="shoping-title">水果</h2>
+                </li>
+                <li>
+                    <a href="#" class="shopping-item haixian">
+                    </a>
+                    <h2 class="shoping-title">海鲜</h2>
+                </li>
+                <li>
+                    <a href="#" class="shopping-item roulei">
+                    </a>
+                    <h2 class="shoping-title">肉类</h2>
+                </li>
+                <li>
+                    <a href="#" class="shopping-item chudan">
+                    </a>
+                    <h2 class="shoping-title">畜蛋</h2>
+                </li>
+                <li>
+                    <a href="#" class="shopping-item shucai">
+                    </a>
+                    <h2 class="shoping-title">蔬菜</h2>
+                </li>
+                <li>
+                    <a href="#" class="shopping-item sudong">
+                    </a>
+                    <h2 class="shoping-title">速冻</h2>
+                </li>
+                <li>
+                    <a href="#" class="shopping-item remai">
+                    </a>
+                    <h2 class="shoping-title">热卖</h2>
+                </li>
+                <li>
+                    <a href="#" class="shopping-item xinpin">
+                    </a>
+                    <h2 class="shoping-title">新品</h2>
+                </li>
+            </ul>
+        </div>
+        <!--<div class="fruit-container">-->
+
+        <div class="fresh-fruit">
+            <div class="fruit-titl clearfix">
+                <h3 class="fruit-title-left">
+                    新鲜水果
+                </h3>
+                <h4 class="fruit-title-right">
+                    更多 >
+                </h4>
+            </div>
+            <div class="fruit-banner">
+                <img class="fruit-img" src="./image/banner.jpg" />
+            </div>
+            <ul class="fruit-list clearfix">
+                <li>
+                    <a href="" class="fruit-img"></a>
+                    <h4 class="fruit-name">苹果</h4>
+                    <p class="fruit-number">12/提</p>
+                    <p class="fruit-price">￥68.00</p>
+                </li>
+                <li>
+                    <a href="" class="fruit-img"></a>
+                    <h4 class="fruit-name">苹果</h4>
+                    <p class="fruit-number">12/提</p>
+                    <p class="fruit-price">￥68.00</p>
+                </li>
+                <li>
+                    <a href="" class="fruit-img"></a>
+                    <h4 class="fruit-name">苹果</h4>
+                    <p class="fruit-number">12/提</p>
+                    <p class="fruit-price">￥68.00</p>
+                </li>
+            </ul>
+            <!--</div>-->
+        </div>
+
+        <div class="fresh-fruit">
+            <div class="fruit-titl clearfix">
+                <h3 class="fruit-title-left">
+                    新鲜水果
+                </h3>
+                <h4 class="fruit-title-right">
+                    更多 >
+                </h4>
+            </div>
+            <div class="fruit-banner">
+                <img class="fruit-img" src="./image/banner.jpg" />
+            </div>
+            <ul class="fruit-list clearfix">
+                <li>
+                    <a href="" class="fruit-img"></a>
+                    <h4 class="fruit-name">苹果</h4>
+                    <p class="fruit-number">12/提</p>
+                    <p class="fruit-price">￥68.00</p>
+                </li>
+                <li>
+                    <a href="" class="fruit-img"></a>
+                    <h4 class="fruit-name">苹果</h4>
+                    <p class="fruit-number">12/提</p>
+                    <p class="fruit-price">￥68.00</p>
+                </li>
+                <li>
+                    <a href="" class="fruit-img"></a>
+                    <h4 class="fruit-name">苹果</h4>
+                    <p class="fruit-number">12/提</p>
+                    <p class="fruit-price">￥68.00</p>
+                </li>
+            </ul>
+            <!--</div>-->
+        </div>
+
+    </main>
+    <footer class="footer">
+        <div class="index"></div>
+        <div class="category"></div>
+        <div class="shopping-cart"></div>
+        <div class="my"></div>
+    </footer>
+</body>
+
+</html>

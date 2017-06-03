@@ -1,0 +1,266 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+a {
+    // 取消a标签手指按下时出现的黑色遮罩层
+    -webkit-tap-highlight-color: transparent;
+    text-decoration: none;
+}
+
+input {
+    // 解决ios下表单元素圆角的问题
+    -webkit-appearance: none;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+.clearfix::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+@rem: 40rem;
+
+.header {
+    width: 100%;
+    height: 80/@rem;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: url('../image/logo.png') no-repeat #37ab40 50%;
+    background-size: 178/@rem 71/@rem;
+    box-sizing: border-box;
+}
+
+.header .search {
+    width: 40/@rem;
+    height: 40/@rem;
+    background: url('../image/icons.png') no-repeat;
+    background-size: 120/@rem 1680/@rem;
+    position: absolute;
+    right: 10/@rem;
+    top: 15/@rem;
+    padding: 20/@rem 10/@rem;
+}
+
+.main {
+    width: 100%;
+    height: 100%;
+    background-color: #efefef;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.main img {
+    width: 100%;
+    margin-top: 40/@rem;
+}
+
+.main .shopping-type {
+    margin-top: 10/@rem;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+    
+.shopping-list {
+}
+
+.shopping-list li {
+    width: 112/@rem;
+    height: 164/@rem;
+    float: left;
+    margin: 15/@rem 24/@rem;
+}
+
+.shopping-item{
+    display: block;
+    width: 112/@rem;
+    height: 112/@rem;
+    background: url('../image/icons.png') no-repeat left -120/@rem;
+    background-size: 120/@rem 1680/@rem;
+}
+
+.haixian {
+    background: url('../image/icons.png') no-repeat left -240/@rem;
+    background-size: 120/@rem 1680/@rem;
+}
+
+.roulei {
+    background: url('../image/icons.png') no-repeat left -360/@rem;
+    background-size: 120/@rem 1680/@rem;
+}
+
+.chudan {
+    background: url('../image/icons.png') no-repeat left -480/@rem;
+    background-size: 120/@rem 1680/@rem;
+}
+
+.shucai {
+    background: url('../image/icons.png') no-repeat left -600/@rem;
+    background-size: 120/@rem 1680/@rem;
+}
+
+.sudong {
+    background: url('../image/icons.png') no-repeat left -720/@rem;
+    background-size: 120/@rem 1680/@rem;
+}
+
+.remai {
+    background: url('../image/icons.png') no-repeat left -840/@rem;
+    background-size: 120/@rem 1680/@rem;
+}
+
+.xinping {
+    background: url('../image/icons.png') no-repeat left -960/@rem;
+    background-size: 120/@rem 1680/@rem;
+}
+
+.shopping-list h2 {
+    text-align: center;
+    color: #666;
+    font-size: 20/@rem;
+    width: 112/@rem;
+    height: 52/@rem;
+    line-height: 52/@rem;
+}
+
+.fresh-fruit {
+    margin-top: 30/@rem;
+    background-color: #fff;
+    // margin-bottom: 20/@rem;
+}
+
+.fruit-title-left {
+    float: left;
+    // height: 36/@rem;
+    color: #fbc83d;
+    font-size: 30/@rem;
+    // line-height: 36/@rem;
+    margin: 20/@rem 0 0 20/@rem;
+}
+.fruit-title-left::before {
+    content: '|';
+    color: #fbc83d;
+    font-weight: bold;
+}
+.fruit-title-right {
+    float: right;
+    color: #7f7f7f;
+    font-size: 24/@rem;
+    margin: 20/@rem 20/@rem 0 0;
+}
+
+.fruit-banner {
+    // width: 100%;
+    width: 710/@rem;
+    height: 180/@rem;
+    // margin: 0 20/@rem;
+    margin: 0 20@rem;
+}
+
+.fruit-banner img {
+    width: 100%;
+}
+.fruit-list {
+    display: flex;
+    justify-content: space-around;
+}
+.fruit-list li {
+    padding-bottom: 30/@rem;
+}
+
+.fruit-img {
+    display: block;
+    width: 180/@rem;
+    height: 180/@rem;
+    background: url('../image/goods.jpg') no-repeat;
+    background-size: 180/@rem 180/@rem;
+}
+
+.fruit-name {
+    color: #666;
+    text-align: center;
+    width: 100/@rem;
+    height: 15/@rem;
+    line-height: 15/@rem;
+    font-size: 30/@rem;
+    margin-right: 10/@rem;
+}
+
+.fruit-number {
+    color: #bbb;
+    width: 100/@rem;
+    height: 12/@rem;
+    text-align: center;
+    line-height: 12/@rem;
+    font-size: 24/@rem;
+    margin-top: 20/@rem;
+}
+
+.fruit-price {
+    color: #ff3300;
+    width: 100/@rem;
+    height: 12/@rem;
+    text-align: center;
+    line-height: 12/@rem;
+    font-size: 24/@rem;
+    margin-top: 20/@rem;
+}
+
+.footer {
+    height: 100/@rem;
+    width: 100%;
+    // margin-top: 30/@rem;
+    background-color: #fff;
+    position: fixed;
+    bottom: 0;
+    left: 0; 
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer div {
+    width: 187.5/@rem;
+    height: 100/@rem;
+    background-size: 180/@rem 180/@rem;
+}
+
+.footer .index {
+    background: url('../image/icons.png') 60/@rem -1000/@rem no-repeat;
+}
+
+.footer .category {
+    background: url('../image/icons.png') 60/@rem -1100/@rem no-repeat;
+}
+
+.footer .shopping-cart {
+    background: url('../image/icons.png') 60/@rem -1205/@rem no-repeat;
+}
+
+.footer .my {
+    background: url('../image/icons.png') 60/@rem -1310/@rem no-repeat;
+}
