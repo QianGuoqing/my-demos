@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>照片墙</title>
+    <style>
+        body {
+            background-color: #eee;
+        }
+        
+        .container {
+            width: 90%;
+            text-align: center;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        h1 {
+            color: deepskyblue;
+        }
+        
+        img {
+            padding: 10px;
+            background-color: #fff;
+            position: absolute;
+            cursor: pointer;
+            transition: all .5s;
+        }
+        
+        img:hover {
+            box-shadow: 0 0 20px #ccc;
+            z-index: 9999;
+        }
+        
+        img:nth-of-type(1) {
+            width: 200px;
+            transform: rotate(45deg);
+            left: 150px;
+        }
+        
+        img:nth-of-type(1):hover,
+        img:nth-of-type(2):hover,
+        img:nth-of-type(3):hover,
+        img:nth-of-type(4):hover,
+        img:nth-of-type(5):hover,
+        img:nth-of-type(6):hover,
+        img:nth-of-type(7):hover,
+        img:nth-of-type(8):hover,
+        img:nth-of-type(9):hover,
+        img:nth-of-type(10):hover {
+            transform: rotate(0deg) scale(1.2);
+        }
+        
+        img:nth-of-type(2) {
+            width: 150px;
+            transform: rotate(-30deg);
+        }
+        
+        img:nth-of-type(3) {
+            width: 230px;
+            transform: rotate(80deg);
+            top: 150px;
+        }
+        
+        img:nth-of-type(4) {
+            width: 180px;
+            transform: rotate(-30deg);
+            left: 300px;
+        }
+        
+        img:nth-of-type(5) {
+            width: 150px;
+            transform: rotate(-800deg);
+            top: 300px;
+            left: 150px;
+        }
+        
+        img:nth-of-type(6) {
+            width: 170px;
+            transform: rotate(10deg);
+            top: 300px;
+        }
+        
+        img:nth-of-type(7) {
+            width: 160px;
+            transform: rotate(-30deg);
+            top: 260px;
+            left: 260px;
+        }
+        
+        img:nth-of-type(8) {
+            width: 240px;
+            transform: rotate(-20deg);
+            top: 320px;
+            left: 320px;
+        }
+        
+        img:nth-of-type(9) {
+            width: 200px;
+            right: 200px;
+            transform: rotate(45deg);
+        }
+        
+        img:nth-of-type(10) {
+            width: 210px;
+            right: 200px;
+            transform: rotate(20deg);
+            top: 320px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>CSS3照片墙</h1>
+        <img src="./image/1.jpeg" alt="">
+        <img src="./image/3.jpg" alt="">
+        <img src="./image/4.jpeg" alt="">
+        <img src="./image/5.jpeg" alt="">
+        <img src="./image/6.png" alt="">
+        <img src="./image/7.png" alt="">
+        <img src="./image/8.jpg" alt="">
+        <img src="./image/9.jpg" alt="">
+        <img src="./image/lele.png" alt="">
+        <img src="./image/shenle.jpg" alt="">
+    </div>
+</body>
+
+</html>
